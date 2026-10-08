@@ -1,0 +1,41 @@
+/*body/general*/
+
+body {
+    background-color: #000000;
+    color: #ffffff;
+
+    font-family: Arial, sans-serif;
+
+    margin: 0;
+    padding: 0;
+}
+
+/*headings*/
+
+h1 {
+    font-family: Arial, sans-serif;
+}
+
+/*text*/
+
+p {
+    font-family: Arial, sans-serif;
+}
+
+/*links+buttons*/
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+.buttons a {
+    display: inline-block;
+
+    padding: 15px 25px;
+
+    margin: 10px;
+
+    border: 1px solid #ffffff;
+}
