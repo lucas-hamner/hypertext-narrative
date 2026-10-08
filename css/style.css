@@ -1,41 +1,346 @@
-/*body/general*/
+/*font import*/
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
+
+
+/*colors*/
+
+:root {
+    --cream: #f7f5f2;
+    --black: #111111;
+    --red: #b00000;
+    --border: #111111;
+}
+
+
+/*general stuff*/
+
+* {
+    box-sizing: border-box;
+}
 
 body {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: var(--cream);
+    color: var(--black);
 
-    font-family: Arial, sans-serif;
+    font-family: 'IBM Plex Mono', monospace;
 
     margin: 0;
     padding: 0;
 }
 
-/*headings*/
-
-h1 {
-    font-family: Arial, sans-serif;
-}
-
-/*text*/
-
-p {
-    font-family: Arial, sans-serif;
-}
-
-/*links+buttons*/
-
 a {
-    color: #ffffff;
+    color: var(--black);
     text-decoration: none;
 }
 
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
 
-.buttons a {
-    display: inline-block;
 
-    padding: 15px 25px;
+/*clock image*/
 
-    margin: 10px;
+.clock {
+    width: 500;
+    height: 500;
 
-    border: 1px solid #ffffff;
+    object-fit: contain;
+}
+
+
+/*entrance page*/
+
+.entrance {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 40px;
+}
+
+.entrance .clock {
+    margin-bottom: 30px;
+}
+
+.entrance h1 {
+    font-size: 48px;
+    font-weight: 700;
+
+    margin-bottom: 20px;
+}
+
+.entrance p {
+    font-size: 18px;
+}
+
+
+/*entrance buttons*/
+
+.entrance .buttons {
+    display: flex;
+
+    gap: 20px;
+
+    margin-top: 40px;
+}
+
+.entrance .buttons a {
+    border: 2px solid var(--black);
+
+    padding: 25px 45px;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.entrance .buttons a:hover {
+    background-color: var(--black);
+    color: var(--cream);
+}
+
+
+/*time machine page(s) clock*/
+
+.page-clock {
+    position: absolute;
+
+    top: 30px;
+    left: 30px;
+
+    width: 250px;
+    height: 250px;
+
+    object-fit: contain;
+}
+
+
+/*outside page*/
+
+.outside {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.outside h1 {
+    font-weight: 700;
+}
+
+.outside a {
+    margin-top: 30px;
+
+    border: 2px solid var(--black);
+
+    padding: 18px 30px;
+
+    font-weight: 700;
+}
+.outside a:hover {
+    background-color: var(--red);
+    color: var(--cream);
+}
+
+
+/*lobby page*/
+
+.lobby {
+    min-height: 100vh;
+
+    padding: 120px 100px 80px;
+
+    text-align: center;
+}
+
+.lobby h1 {
+    text-align: center;
+
+    font-size: 42px;
+
+    font-weight: 700;
+
+    margin-bottom: 60px;
+}
+
+.machines {
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+
+/*exhibit numbers*/
+
+.exhibit-number {
+    font-size: 14px;
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+}
+
+
+/*time machine buttons*/
+
+.machine-button {
+    display: block;
+
+    border: 2px solid var(--black);
+
+    padding: 25px;
+
+    font-size: 24px;
+
+    font-weight: 700;
+}
+
+.machine-button:hover {
+    background-color: var(--black);
+    color: var(--cream);
+}
+
+
+/*time machine pages*/
+
+.machine-page {
+    min-height: 100vh;
+
+    padding: 40px 70px;
+}
+
+
+/*return to lobby button*/
+
+.return-lobby {
+    position: absolute;
+
+    top: 35px;
+    right: 50px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    border-bottom: 1px solid var(--black);
+
+    padding-bottom: 4px;
+}
+
+
+/*time machine title*/
+
+.machine-title {
+    text-align: center;
+
+    padding-top: 50px;
+
+    margin-bottom: 70px;
+}
+
+.machine-title h1 {
+    font-size: 44px;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+.machine-title h2 {
+    font-size: 18px;
+
+    font-weight: 400;
+}
+
+
+/*time machine content*/
+
+.machine-content {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    align-items: start;
+}
+
+
+/*time machine description*/
+
+.machine-info {
+    padding-top: 20px;
+}
+
+.machine-info h3 {
+    font-size: 15px;
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+}
+
+.machine-info p {
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    margin-bottom: 35px;
+}
+
+
+/*time machine image*/
+
+.machine-image {
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/*time machine activation button */
+
+.activate {
+    display: block;
+
+    margin-top: 25px;
+
+    color: var(--red);
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    text-align: center;
+}
+
+.activate:hover {
+    text-decoration: underline;
 }
